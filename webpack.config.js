@@ -15,6 +15,10 @@ module.exports = {
             limit: 2048
           }
         }
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
