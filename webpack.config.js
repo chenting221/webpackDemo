@@ -4,7 +4,10 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js'
+  },
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
@@ -45,7 +48,8 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'bundle.js',
+    publicPath: 'http://www.cdn.com.cn',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
